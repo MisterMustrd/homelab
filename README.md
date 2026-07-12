@@ -20,6 +20,7 @@ The homelab hosts the majority of my media and productivity services, along stor
 ## Core Services
 
 ### Networking
+- UFW: Netfilter firewall filter
 - Tailscale: Secure remote access to the Homelab.
 
 ### Media
@@ -50,6 +51,7 @@ The homelab also serves as the primary storage location for both local services 
 
 
 Key components:
+- UFW: Default-deny firewall rules with Tailscale authenticated devices only. 
 - Tailscale for secure remote access.
 - DNS resolution / filtering provided by my VPS.
 - Docker for running and isolating self-hosted services.
