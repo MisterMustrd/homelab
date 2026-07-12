@@ -28,8 +28,8 @@ tailscale status
 
 
 # Permissions 
-sudo chown -R 1000:1000 /PATH
-sudo chmod -R 775 /PATH
+sudo chown -R 1000:1000 <PATH>
+sudo chmod -R 775 <PATH>
 
 # Storage Check
 df -h
@@ -59,7 +59,7 @@ docker logs -f <container>
 
 # Github Push
 git add .
-git commit -m "[PUSH NAME]"
+git commit -m "PUSHNAME"
 git push origin main
 
     
