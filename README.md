@@ -51,8 +51,8 @@ The homelab also serves as the primary storage location for both local services 
 
 
 Key components:
-- UFW: Default-deny firewall rules with Tailscale authenticated devices only. 
-- Tailscale for secure remote access.
+- UFW: Default-deny firewall rules to limit access. 
+- Tailscale for secure remote connection.
 - DNS resolution / filtering provided by my VPS.
 - Docker for running and isolating self-hosted services.
 - User-defined Docker networks for service communication.
