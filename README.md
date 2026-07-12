@@ -20,7 +20,7 @@ The homelab hosts the majority of my media and productivity services, along stor
 ## Core Services
 
 ### Networking
-- Tailscale: Secure remote access to the VPS.
+- Tailscale: Secure remote access to the Homelab.
 
 ### Media
 - Jellyfin: Media streaming server.
