@@ -1,4 +1,4 @@
-# homelab
+# Homelab
 The homelab hosts the majority of my media and productivity services, along storage infrastructure for the network.
 
 
