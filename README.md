@@ -51,7 +51,6 @@ The homelab also serves as the primary storage location for both local services 
 
 
 Key components:
-- UFW: Default-deny firewall rules to limit access. 
 - Tailscale for secure remote connection.
 - DNS resolution / filtering provided by my VPS.
 - Docker for running and isolating self-hosted services.
@@ -66,6 +65,8 @@ The homelab is designed to work in tandem with my VPS so the VPS handles public 
 By limiting access to only devices authenticated by Tailscale, this minimizes unnecessary network exposure while providing secure access to self-hosted services.
 
 Key components:
+- UFW: Default-deny firewall rules to limit access. 
+- Fail2ban: Automatically blocks IP addresses after repeated failed login attempts.
 - Tailscale for secure remote access without exposing services publicly.
 - DNS filtering and resolution provided by my VPS using Pi-hole, Unbound, and Cloudflared.
 - Docker network isolation to separate applications where appropriate.

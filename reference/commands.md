@@ -7,21 +7,25 @@ sudo apt full-upgrade -y
 sudo apt autoremove -y
 sudo reboot
 
+
 ## Check Upgradable 
 apt list --upgradable
+
 
 ## Prune Docker Images
 docker image prune -af
 
-## Pihole 
-sudo pihole -up
-sudo pihole status
-
-### Gravity
-sudo pihole -g
 
 ## UFW Status
 sudo ufw status verbose
+
+
+## Fail2Ban Status
+sudo systemctl status fail2ban
+
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+
 
 ## Tailscale Status
 tailscale status
