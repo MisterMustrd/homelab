@@ -51,8 +51,7 @@ docker compose restart
 docker compose config
 
 # ClamAV Scan
-clamscan -r -i /home/mustrd/Downloads
-clamscan -r -i /home/mustrd/Docker
+clamscan -r -i <PATH>
 
 ## Container Logs
 docker logs <container> --tail 50
