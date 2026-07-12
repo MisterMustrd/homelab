@@ -7,10 +7,10 @@ services:
       - vpn_net
 
     environment:
-      MYSQL_ROOT_PASSWORD: "[RootPassword]"
-      MYSQL_DATABASE: "[DatabaseName]"
-      MYSQL_USER: "[Username]"
-      MYSQL_PASSWORD: "[Password]"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     volumes:
       - ./data:/var/lib/mysql

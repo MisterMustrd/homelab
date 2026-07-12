@@ -12,12 +12,12 @@ services:
       ND_BASEURL: ""
       ND_ENABLECOVERART: "true"
       ND_LASTFM_ENABLED: "true"
-      ND_LASTFM_APIKEY: "[LastFMAPIKey]"
-      ND_LASTFM_SECRET: "[LastFMSecret]"
+      ND_LASTFM_APIKEY: ${LASTFM_API_KEY}
+      ND_LASTFM_SECRET: ${LASTFM_SECRET}
 
     volumes:
       - ./data:/data
-      - /mnt/storage/Music:/music
+      - ${MUSIC}:/music
 
     ports:
       - "4533:4533"

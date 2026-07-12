@@ -10,14 +10,14 @@ services:
       - "4534:80"
 
     environment:
-      TZ: America/[TimeZone]
+      TZ: ${TZ}
 
     volumes:
-      - /mnt/storage/Music:/music
+      - ${MUSIC_PATH}:/music
       - ./image-storage:/var/www/html/public/img/storage
       - ./search-indexes:/var/www/html/storage/search-indexes
       - ./logs:/var/www/html/storage/logs
-      - ./.env:/var/www/html/.env
+      - ${KOEL_ENV_FILE}:/var/www/html/.env:ro
 
     restart: unless-stopped
 

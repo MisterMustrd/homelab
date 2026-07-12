@@ -8,18 +8,16 @@ services:
       - vpn_net
 
     environment:
-      - USERID=1000
-      - GROUPID=1000
-      - TZ=[TimeZone]
+      - USERID=${PUID}
+      - GROUPID=${PGID}
+      - TZ=${TZ}
 
     volumes:
-      - /mnt/storage:/mount/storage:rw
-      - /mnt/storage/Downloads:/mount/downloads:rw
+      - ${PATH}:/PATH
 
     command: >
-      -u "[Username];[Password]"
-      -s "Storage;/mount/storage;yes;no;no;[Username]"
-      -s "Downloads;/mount/downloads;yes;no;no;[Username]"
+      -u "${SAMBA_USER};${SAMBA_PASSWORD}"
+      -s "Path;/PATH;yes;no;no;${SAMBA_USER}"
       -p
 
     ports:
