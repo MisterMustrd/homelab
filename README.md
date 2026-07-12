@@ -14,7 +14,7 @@ The homelab hosts the majority of my media and productivity services, along stor
 - Ubuntu Desktop 24.04 LTS
 - Docker & Docker Compose
 - Hosted on Personal Laptop 
-- Large HDD External mounted storage for media and shared files
+- Large HDD External Mounte Storage
 
 
 ## Core Services
