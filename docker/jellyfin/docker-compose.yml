@@ -1,0 +1,30 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+
+    networks:
+      - vpn_net
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - JELLYFIN_PublishedServerUrl=http://[TailscaleIP]:8096
+
+    volumes:
+      - ./config:/config
+      - /mnt/storage/Videos:/media
+      - /mnt/storage:/hdd
+
+    ports:
+      - "8096:8096"
+      - "8920:8920"
+
+    restart: unless-stopped
+
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  vpn_net:
+    external: true

@@ -1,0 +1,43 @@
+services:
+  redis:
+    image: redis:alpine
+
+    container_name: redis
+
+    restart: unless-stopped
+
+    networks:
+      - vpn_net
+
+  nextcloud:
+    image: nextcloud:latest
+
+    container_name: nextcloud
+
+    depends_on:
+      - redis
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./data:/var/www/html
+
+    environment:
+      - MYSQL_HOST=mariadb
+      - MYSQL_DATABASE=[DatabaseName]
+      - MYSQL_USER=[Username]
+      - MYSQL_PASSWORD=[Password]
+      - REDIS_HOST=redis
+
+    restart: unless-stopped
+
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - vpn_net
+
+networks:
+  vpn_net:
+    external: true

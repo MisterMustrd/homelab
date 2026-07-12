@@ -1,0 +1,22 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb
+
+    networks:
+      - vpn_net
+
+    environment:
+      MYSQL_ROOT_PASSWORD: "[RootPassword]"
+      MYSQL_DATABASE: "[DatabaseName]"
+      MYSQL_USER: "[Username]"
+      MYSQL_PASSWORD: "[Password]"
+
+    volumes:
+      - ./data:/var/lib/mysql
+
+    restart: unless-stopped
+
+networks:
+  vpn_net:
+    external: true

@@ -1,0 +1,36 @@
+services:
+  smbshare:
+    image: dperson/samba:latest
+
+    container_name: smbshare
+
+    networks:
+      - vpn_net
+
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+      - TZ=[TimeZone]
+
+    volumes:
+      - /mnt/storage:/mount/storage:rw
+      - /mnt/storage/Downloads:/mount/downloads:rw
+
+    command: >
+      -u "[Username];[Password]"
+      -s "Storage;/mount/storage;yes;no;no;[Username]"
+      -s "Downloads;/mount/downloads;yes;no;no;[Username]"
+      -p
+
+    ports:
+      - "139:139"
+      - "445:445"
+
+    restart: unless-stopped
+
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  vpn_net:
+    external: true
