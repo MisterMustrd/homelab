@@ -66,10 +66,9 @@ By limiting access to only devices authenticated by Tailscale, this minimizes un
 
 Key components:
 - UFW: Default-deny firewall rules to limit access. 
+- SSH key-based authentication for remote administration.
 - Fail2ban: Automatically blocks IP addresses after repeated failed login attempts.
-- Tailscale for secure remote access without exposing services publicly.
 - DNS filtering and resolution provided by my VPS using Pi-hole, Unbound, and Cloudflared.
-- Docker network isolation to separate applications where appropriate.
 - User and file permissions configured to control access to mounted storage.
 - Regular system and container updates to keep software current.
 
