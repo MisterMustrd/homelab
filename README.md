@@ -20,7 +20,7 @@ The homelab hosts the majority of my media and productivity services, along stor
 ## Core Services
 
 ### Networking
-- UFW: Netfilter firewall filter
+- UFW: Netfilter firewall
 - Tailscale: Secure remote access to the Homelab.
 
 ### Media
