@@ -85,6 +85,8 @@ My Docker environment includes:
 - Sensitive compose configuration separated into local .env files.
 - Persistent volumes for application data and configuration.
 - Watchtower for automatic container updates.
+- Composes optomized to be portable for repeatable deployments.
+- Git-based infrastructure management with repositories deployed over SSH.
 
 
 ## Storage
